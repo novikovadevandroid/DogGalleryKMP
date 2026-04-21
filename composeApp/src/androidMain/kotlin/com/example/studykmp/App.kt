@@ -1,5 +1,6 @@
 package com.example.studykmp
 
+import android.util.Log
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -14,13 +15,26 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.studykmp.data.network.ApiFactory
+import com.example.studykmp.data.network.HttpClientFactory
 import doggallerykmp.composeapp.generated.resources.Res
 import doggallerykmp.composeapp.generated.resources.compose_multiplatform
+import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.painterResource
 
 @Composable
 @Preview
 fun App() {
+    // Тест
+    val scope = rememberCoroutineScope()
+    LaunchedEffect(Unit) {
+        scope.launch {
+            ApiFactory.createNetworkApi(HttpClientFactory.create()).apply {
+                Log.d("MyTag", this.getBreeds().toString())
+            }
+        }
+    }
+
     MaterialTheme {
         var showContent by remember { mutableStateOf(false) }
         Column(

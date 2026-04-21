@@ -10,10 +10,6 @@ plugins {
     alias(libs.plugins.ktorfit)
 }
 
-ktorfit {
-    compilerPluginVersion.set("-")
-}
-
 kotlin {
     androidTarget {
         compilerOptions {
