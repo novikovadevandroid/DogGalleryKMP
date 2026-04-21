@@ -1,4 +1,4 @@
-package com.example.studykmp.data.network.dto
+package com.example.doggallerykmp.models.data
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

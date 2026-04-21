@@ -1,6 +1,6 @@
-package com.example.studykmp.data.network
+package com.example.doggallerykmp.data.network
 
-import com.example.studykmp.data.network.dto.BreedsDto
+import com.example.doggallerykmp.models.data.BreedsDto
 import de.jensklingenberg.ktorfit.http.GET
 
 /**
@@ -13,5 +13,5 @@ interface ApiService {
      * @return Мапа пород
      */
     @GET("api/breeds/list/all")
-    suspend fun getBreeds(): BreedsDto
+    suspend fun getDtoBreeds(): BreedsDto
 }

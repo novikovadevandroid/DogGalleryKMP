@@ -1,4 +1,4 @@
-package com.example.studykmp.data.network
+package com.example.doggallerykmp.data.network
 
 import de.jensklingenberg.ktorfit.Ktorfit
 import io.ktor.client.HttpClient

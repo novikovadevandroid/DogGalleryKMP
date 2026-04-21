@@ -1,4 +1,4 @@
-package com.example.studykmp.data.network
+package com.example.doggallerykmp.data.network
 
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation

@@ -1,9 +1,9 @@
-package com.example.studykmp
+package com.example.doggallerykmp
 
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class ComposeAppAndroidUnitTest {
+class SharedCommonTest {
 
     @Test
     fun example() {
