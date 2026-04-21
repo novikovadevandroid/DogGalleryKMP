@@ -53,7 +53,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.example.studykmp.shared"
+    namespace = "com.example.doggallerykmp.shared"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11

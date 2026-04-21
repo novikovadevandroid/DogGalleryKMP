@@ -1,4 +1,4 @@
-package com.example.studykmp
+package com.example.doggallerykmp
 
 import platform.UIKit.UIDevice
 

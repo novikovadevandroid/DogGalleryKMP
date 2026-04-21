@@ -48,7 +48,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.example.studykmp"
+    namespace = "com.example.doggallerykmp"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
