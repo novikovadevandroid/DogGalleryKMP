@@ -29,4 +29,10 @@ dependencyResolutionManagement {
 }
 
 include(":composeApp")
-include(":shared")
+include(":core-network")
+include(":features:search:data")
+include(":features:search:domain")
+include(":features:search:presentation")
+include(":features:details:data")
+include(":features:details:domain")
+include(":features:details:presentation")
