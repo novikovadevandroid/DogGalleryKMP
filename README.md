@@ -1,4 +1,4 @@
 This is a Kotlin Multiplatform project targeting Android, iOS.
 
-![Скриншоты] (screenshots/Search.jpg) (screenshots/Details.jpg)
-<img src="screenshots/Search.jpg" alt="Скриншот проекта" width="600">
+Preview
+<img src="screenshots/Search.jpg" width="600"> <img src="screenshots/Details.ipg" width="600">
