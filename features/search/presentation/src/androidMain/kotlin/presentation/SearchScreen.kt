@@ -1,6 +1,7 @@
 package presentation
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -22,7 +23,10 @@ import org.koin.compose.viewmodel.koinViewModel
 import presentation.model.BreedUi
 
 @Composable
-fun SearchScreen() {
+fun SearchScreen(
+    modifier: Modifier,
+    onClick: (String) -> Unit
+) {
     val viewModel = koinViewModel<SearchViewModel>()
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
@@ -33,7 +37,11 @@ fun SearchScreen() {
 
         uiState.data != null -> {
             uiState.data?.let { data ->
-                SearchScreenContent(data = data)
+                SearchScreenContent(
+                    data = data,
+                    onClick = onClick,
+                    modifier = modifier
+                )
             }
         }
 
@@ -46,13 +54,18 @@ fun SearchScreen() {
 @Composable
 private fun SearchScreenContent(
     data: List<BreedUi>,
+    onClick: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {
     LazyColumn(
         modifier = modifier.fillMaxSize()
     ) {
         items(items = data) { breed ->
-            SearchItem(data = breed)
+            SearchItem(
+                data = breed,
+                onClick = onClick,
+                modifier = modifier
+            )
         }
     }
 }
@@ -83,6 +96,7 @@ private fun SearchError(
 @Composable
 private fun SearchItem(
     data: BreedUi,
+    onClick: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Box(
@@ -93,6 +107,7 @@ private fun SearchItem(
                 color = MaterialTheme.colorScheme.onSecondary,
                 shape = CircleShape
             )
+            .clickable { onClick(data.name) }
     ) {
         Text(
             modifier = modifier.padding(16.dp),
@@ -110,5 +125,8 @@ private fun SearchScreenContentPreview() {
         BreedUi(name = "Dog3")
     )
 
-    SearchScreenContent(data = data)
+    SearchScreenContent(
+        data = data,
+        onClick = {}
+    )
 }
