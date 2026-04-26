@@ -18,6 +18,7 @@ kotlin {
     sourceSets {
         androidMain.dependencies {
             implementation(libs.androidx.activity.compose)
+            implementation(libs.navigation.compose)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -28,6 +29,8 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+
+            implementation(projects.shared)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

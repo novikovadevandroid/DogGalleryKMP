@@ -13,6 +13,7 @@ kotlin {
         }
     }
 
+    iosX64()
     iosArm64()
     iosSimulatorArm64()
 
@@ -20,8 +21,10 @@ kotlin {
         androidMain.dependencies {
         }
         commonMain.dependencies {
-            implementation(libs.ktor.client.core)
-            implementation(libs.ktor.client.content.negotiation)
+            implementation(libs.koin.core)
+
+            implementation(projects.coreNetwork)
+            implementation(projects.features.details.domain)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
