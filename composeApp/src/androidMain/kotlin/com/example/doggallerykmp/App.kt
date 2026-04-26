@@ -3,16 +3,16 @@ package com.example.doggallerykmp
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.safeContentPadding
+import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.NavHost
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.example.doggallerykmp.navigation.BaseNavGraph
+import com.example.doggallerykmp.navigation.DetailsNavGraph
 import com.example.doggallerykmp.navigation.SearchNavGraph
 
 @Composable
@@ -22,7 +22,7 @@ fun App() {
         Column(
             modifier = Modifier
                 .background(MaterialTheme.colorScheme.primaryContainer)
-                .safeContentPadding()
+                .safeDrawingPadding()
                 .fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
@@ -33,7 +33,8 @@ fun App() {
                 startDestination = SearchNavGraph.Destination.Root
             ) {
                 listOf<BaseNavGraph>(
-                    SearchNavGraph
+                    SearchNavGraph,
+                    DetailsNavGraph
                 ).forEach {
                     it.build(
                         modifier = Modifier,

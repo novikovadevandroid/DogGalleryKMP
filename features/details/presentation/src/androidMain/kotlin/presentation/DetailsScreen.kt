@@ -13,6 +13,7 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -24,25 +25,45 @@ import org.koin.compose.viewmodel.koinViewModel
 import presentation.model.ImageUi
 
 @Composable
-fun DetailsScreen(modifier: Modifier) {
+fun DetailsScreen(
+    modifier: Modifier,
+    breed: String
+) {
     val viewModel = koinViewModel<DetailsViewModel>()
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
+    Box(
+        modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
+        Text("Details for $breed")
+    }
+
+    /*LaunchedEffect(breed) {
+        viewModel.loadImages(breed = breed, count = 1)
+    }
+
     when {
         uiState.isLoading -> {
-            DetailsLoading()
+            DetailsLoading(modifier)
         }
 
         uiState.data != null -> {
             uiState.data?.let { data ->
-                DetailsScreenContent(data = data)
+                DetailsScreenContent(
+                    data = data,
+                    modifier = modifier
+                )
             }
         }
 
         uiState.error.isNotEmpty() -> {
-            DetailsError(error = uiState.error)
+            DetailsError(
+                error = uiState.error,
+                modifier = modifier
+            )
         }
-    }
+    }*/
 }
 
 @Composable

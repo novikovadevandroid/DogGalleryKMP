@@ -1,9 +1,12 @@
 package com.example.shared
 
 import data.di.getSearchDataModule
+import di.getDetailsDataModule
+import domain.di.getDetailsDomainModule
 import domain.di.getSearchDomainModule
 import network.di.getCoreNetworkModule
 import org.koin.core.context.startKoin
+import presentation.di.getDetailsPresentationModule
 import presentation.di.getSearchPresentationModule
 
 fun initKoin() {
@@ -12,7 +15,11 @@ fun initKoin() {
             getCoreNetworkModule(),
             getSearchDataModule(),
             getSearchDomainModule(),
-            getSearchPresentationModule()
+            getSearchPresentationModule(),
+
+            getDetailsDataModule(),
+            getDetailsDomainModule(),
+            getDetailsPresentationModule()
         )
     }
 }

@@ -5,10 +5,12 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
+import androidx.navigation.toRoute
 import kotlinx.serialization.Serializable
+import presentation.DetailsScreen
 import presentation.SearchScreen
 
-object SearchNavGraph : BaseNavGraph {
+object DetailsNavGraph : BaseNavGraph {
 
     sealed interface Destination {
 
@@ -16,7 +18,7 @@ object SearchNavGraph : BaseNavGraph {
         data object Root : Destination
 
         @Serializable
-        data object Search : Destination
+        data class Details(val breed: String) : Destination
     }
 
     override fun build(
@@ -24,12 +26,12 @@ object SearchNavGraph : BaseNavGraph {
         navController: NavHostController,
         navGraphBuilder: NavGraphBuilder
     ) {
-        navGraphBuilder.navigation<Destination.Root>(startDestination = Destination.Search) {
+        navGraphBuilder.navigation<Destination.Root>(startDestination = Destination.Details::class) {
 
-            composable<Destination.Search> {
-                SearchScreen(modifier, onClick = { breed ->
-                    navController.navigate(DetailsNavGraph.Destination.Details(breed))
-                })
+            composable<Destination.Details> { navBackStack ->
+                val breed = navBackStack.toRoute<Destination.Details>().breed
+
+                DetailsScreen(modifier = modifier, breed = breed)
             }
         }
     }

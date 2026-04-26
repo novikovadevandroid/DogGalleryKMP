@@ -27,7 +27,7 @@ class SearchViewModel(
 
     private fun loadBreeds() {
         viewModelScope.launch {
-            _uiState.collectLatest {
+            _uiState.collect {
                 _uiState.update { SearchUiState(isLoading = true) }
                 useCase.invoke().onSuccess { data ->
                     _uiState.update { SearchUiState(data = data.mapToUiBreeds()) }

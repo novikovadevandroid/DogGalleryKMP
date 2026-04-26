@@ -22,13 +22,9 @@ class DetailsViewModel(
     @NativeCoroutinesState
     val uiState: StateFlow<DetailsUiState> = _uiState
 
-    init {
-        loadImages("", 3)
-    }
-
-    private fun loadImages(breed: String, count: Int) {
+    fun loadImages(breed: String, count: Int) {
         viewModelScope.launch {
-            _uiState.collectLatest {
+            _uiState.collect {
                 _uiState.update { DetailsUiState(isLoading = true) }
                 useCase.invoke(breed, count).onSuccess { data ->
                     _uiState.update { DetailsUiState(data = data.mapToImageUi()) }
