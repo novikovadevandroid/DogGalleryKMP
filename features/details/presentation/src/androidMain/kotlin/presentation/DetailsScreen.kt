@@ -24,7 +24,7 @@ import org.koin.compose.viewmodel.koinViewModel
 import presentation.model.ImageUi
 
 @Composable
-fun DetailsScreen() {
+fun DetailsScreen(modifier: Modifier) {
     val viewModel = koinViewModel<DetailsViewModel>()
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
