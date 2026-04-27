@@ -14,7 +14,7 @@ This is a Kotlin Multiplatform project targeting Android, iOS.
   <li>Coroutines + Flow</li>
 </ul>
 
-<p align="center">
+<p align="start">
   <img src="screenshots/Search.jpg" alt="Image 1" width="45%">
   <img src="screenshots/Details.jpg" alt="Image 2" width="45%">
 </p>
