@@ -8,8 +8,9 @@ This is a Kotlin Multiplatform project targeting Android, iOS.
 </p>
 
 <h2>Stack</h2>
-Clean Architecture MVVM
-Kotlin Multiplatform
-Jetpack Compose
-Ktor
-Koin
+- Clean Architecture 
+- MVVM
+- Kotlin Multiplatform
+- Jetpack Compose
+- Ktor
+- Koin
