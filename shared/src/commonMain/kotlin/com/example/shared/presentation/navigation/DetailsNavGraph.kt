@@ -1,4 +1,4 @@
-package com.example.doggallerykmp.navigation
+package com.example.shared.presentation.navigation
 
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraphBuilder
@@ -7,8 +7,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import androidx.navigation.toRoute
 import kotlinx.serialization.Serializable
-import presentation.DetailsScreen
-import presentation.SearchScreen
+import com.example.shared.presentation.DetailsScreen
 
 object DetailsNavGraph : BaseNavGraph {
 
