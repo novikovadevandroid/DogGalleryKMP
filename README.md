@@ -2,7 +2,6 @@ This is a Kotlin Multiplatform project targeting Android, iOS.
 
 <h1>Preview</h1>
 
-<h2>Stack</h2>
 <ul>
   <li>Clean Architecture</li>
   <li>Multi-Module</li>
