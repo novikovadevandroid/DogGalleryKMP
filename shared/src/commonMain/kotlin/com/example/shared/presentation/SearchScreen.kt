@@ -1,4 +1,4 @@
-package presentation
+package com.example.shared.presentation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -20,6 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.koin.compose.viewmodel.koinViewModel
+import presentation.SearchViewModel
 import presentation.model.BreedUi
 
 @Composable

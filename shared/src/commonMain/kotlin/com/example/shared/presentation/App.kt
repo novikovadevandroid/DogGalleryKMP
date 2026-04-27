@@ -1,4 +1,4 @@
-package com.example.doggallerykmp
+package com.example.shared.presentation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -11,9 +11,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import com.example.doggallerykmp.navigation.BaseNavGraph
-import com.example.doggallerykmp.navigation.DetailsNavGraph
-import com.example.doggallerykmp.navigation.SearchNavGraph
+import com.example.shared.presentation.navigation.BaseNavGraph
+import com.example.shared.presentation.navigation.DetailsNavGraph
+import com.example.shared.presentation.navigation.SearchNavGraph
 
 @Composable
 @Preview

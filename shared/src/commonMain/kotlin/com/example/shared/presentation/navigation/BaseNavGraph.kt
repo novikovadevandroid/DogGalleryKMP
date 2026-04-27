@@ -1,4 +1,4 @@
-package com.example.doggallerykmp.navigation
+package com.example.shared.presentation.navigation
 
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraphBuilder

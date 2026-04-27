@@ -1,7 +1,11 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.android.kotlin.multiplatform.library)
+    alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.android.lint)
+    alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.native.coroutines)
+    alias(libs.plugins.kotlinx.serialization)
 }
 
 kotlin {
@@ -63,6 +67,23 @@ kotlin {
                 implementation(libs.kotlin.stdlib)
                 implementation(libs.koin.core)
 
+                implementation(libs.runtime)
+                implementation(libs.foundation)
+                implementation(libs.ui)
+                implementation(libs.material3)
+                implementation(libs.ui.tooling.preview)
+
+                implementation(libs.ui.tooling.preview)
+
+                implementation(libs.androidx.lifecycle.runtimeCompose)
+
+                implementation(libs.kmp.observableviewmodel.core)
+                implementation(libs.koin.compose.viewmodel)
+
+                implementation(libs.navigation.compose)
+
+                implementation(libs.coil)
+
                 api(projects.coreNetwork)
 
                 api(projects.features.search.data)
@@ -72,7 +93,6 @@ kotlin {
                 api(projects.features.details.data)
                 api(projects.features.details.domain)
                 api(projects.features.details.presentation)
-                // Add KMP dependencies here
             }
         }
 

@@ -21,13 +21,7 @@ kotlin {
 
     sourceSets {
         androidMain.dependencies {
-            implementation(compose.runtime)
-            implementation(compose.foundation)
-            implementation(compose.ui)
-            implementation(compose.material3)
-            implementation(compose.preview)
 
-            implementation(libs.coil)
         }
         commonMain.dependencies {
             implementation(libs.kmp.observableviewmodel.core)
@@ -56,5 +50,5 @@ android {
 }
 
 dependencies {
-    debugImplementation(compose.uiTooling)
+    debugImplementation(libs.ui.tooling)
 }

@@ -1,4 +1,4 @@
-package com.example.shared
+package com.example.shared.di
 
 import data.di.getSearchDataModule
 import di.getDetailsDataModule
